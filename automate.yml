@@ -6,18 +6,9 @@
       service:
         name: tomcat
         state: stopped
-        
-    - name: stop docker
-      service:
-        name: docker
-        start: stopped
-        
+
     - name: start tomcat
       service:
         name: tomcat
         state: started
         
-    - name: start docker
-      service:
-        name: docker
-        start: started
