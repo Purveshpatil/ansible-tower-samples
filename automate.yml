@@ -1,13 +1,23 @@
-- name: Service up
+- name: service up
   hosts: all
-  become: true
+  become: yes
   tasks:
-    - name: restart tomcat
+    - name: stop tomcat
       service:
         name: tomcat
-        state: restarted
+        state: sttoped
         
-    - name: restart docker
+    - name: stop docker
       service:
         name: docker
-        start: restarted
+        start: sttoped
+        
+    - name: start tomcat
+      service:
+        name: tomcat
+        state: started
+        
+    - name: start docker
+      service:
+        name: docker
+        start: started
