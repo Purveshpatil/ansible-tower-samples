@@ -1,8 +1,7 @@
 ---
-- hosts: all
+- name: reboot machine
+  hosts: all
   become: yes
   tasks:
-    - name: Get info on docker host and list images
-      docker_host_info:
-        containers: yes
-      register: containers_to_stop
+    - name: reboot the machine
+      ansible.windows.win_reboot:
