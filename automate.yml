@@ -1,7 +1,9 @@
 ---
-- name: reboot machine
+- name: this playbook will restart docker services
   hosts: all
   become: yes
   tasks:
-    - name: reboot the machine
-      ansible.windows.win_reboot:
+    - name: docker restart
+      docker_service:
+        restarted: yes
+        state: present
