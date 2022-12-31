@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-    - name: docker status
-      docker_hosts_info:
+    - name: Get info on docker host and list images
+      docker_host_info:
         containers: yes
-      register: docker_info
+      register: containers_to_stop
