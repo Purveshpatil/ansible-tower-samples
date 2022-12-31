@@ -2,6 +2,6 @@
   hosts: all
   tasks:
     - name: Hello Message
-      debug:
-        msg: "Hello World!"
-
+      yum:
+        name: java
+        state: present
