@@ -1,14 +1,8 @@
-- name: service up
-  hosts: all
+---
+- hosts: all
   become: yes
   tasks:
-    - name: stop tomcat
-      service:
-        name: tomcat
-        state: stopped
-
-    - name: start tomcat
-      service:
-        name: tomcat
-        state: started
-        
+  - name: docker status
+    docker_hosts_info:
+      containers: yes
+    register: docker_info
