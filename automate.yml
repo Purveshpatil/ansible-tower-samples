@@ -1,8 +1,23 @@
-- name: Package check
+- name: Service up
   hosts: all
   become: true
   tasks:
-    - name: Check java installed or not
-      yum:
-        name: java
-        state: present
+     - name: stop tomcat
+      service:
+        name: tomcat
+        state: sttoped
+        
+    - name: stop docker
+      service:
+        name: docker
+        start: sttoped
+        
+    - name: start tomcat
+      service:
+        name: tomcat
+        state: started
+        
+    - name: start docker
+      service:
+        name: docker
+        start: started
