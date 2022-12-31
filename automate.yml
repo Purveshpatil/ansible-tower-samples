@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-  - name: docker status
-    docker_hosts_info:
-      containers: yes
-    register: docker_info
+    - name: docker status
+      docker_hosts_info:
+        containers: yes
+      register: docker_info
