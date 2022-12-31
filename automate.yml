@@ -5,12 +5,12 @@
     - name: stop tomcat
       service:
         name: tomcat
-        state: sttoped
+        state: stopped
         
     - name: stop docker
       service:
         name: docker
-        start: sttoped
+        start: stopped
         
     - name: start tomcat
       service:
